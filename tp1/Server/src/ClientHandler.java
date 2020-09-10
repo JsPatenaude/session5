@@ -1,3 +1,4 @@
+import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
@@ -25,6 +26,11 @@ public class ClientHandler extends Thread {
 			// Out channel to send messages to client
 			DataOutputStream out = new DataOutputStream(socket.getOutputStream());
 			out.writeUTF("Hello from server, you are client" + this.nClients);
+			
+			// In channel to receive messages from client
+			DataInputStream in = new DataInputStream(this.socket.getInputStream());
+			String message = in.readUTF();
+			System.out.println("Hey! I received a message from a client: " + message);
 		}
 		catch(IOException e) {
 			System.out.format("Exception while handling client%d: %s\n", this.nClients, e);

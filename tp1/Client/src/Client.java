@@ -1,4 +1,6 @@
+import java.awt.image.BufferedImage;
 import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.net.Socket;
 
 public class Client {
@@ -24,6 +26,10 @@ public class Client {
 		this.ip = ip;
 	}
 	
+	/**
+	* Starts the client application
+	* @return void
+	*/
 	public void startClient() throws Exception {
 		// Create connection with server
 		this.socket = new Socket(this.ip, this.port);
@@ -35,9 +41,23 @@ public class Client {
 		String message = in.readUTF();
 		System.out.println(message);
 		
+		// Out channel to send messages to server
+		DataOutputStream out = new DataOutputStream(socket.getOutputStream());
+		out.writeUTF("Hello from client");
+		
 		// Close connection with server
 		this.socket.close();
 	}
+	
+	/**
+	* Get the desired image in the project folder
+	* @param imageName the name of the desired image
+	* @return void
+	*/
+	public void getImage(String imageName) {
+		
+	}
+	
 }
 
 
