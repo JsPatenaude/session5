@@ -1,0 +1,18 @@
+
+public class Server {
+	int port = 5000;
+	String ip = "0.0.0.0";
+	
+	public boolean portValidation() {
+		return false;
+	}
+	
+	public boolean IPValidation() {
+		return false;
+	}
+	
+	
+	public static void main(String[] args) {
+		System.out.println("Hello");
+	}
+}

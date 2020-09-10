@@ -1,0 +1,37 @@
+import java.io.BufferedReader; 
+import java.io.IOException; 
+import java.io.InputStreamReader;
+
+public class Main {
+	public static void main(String[] args) throws IOException {
+		BufferedReader input = new BufferedReader(new InputStreamReader(System.in)); 
+		System.out.println("Enter the port of the server: ");
+		int port = Integer.parseInt(input.readLine());
+		if (port < 5000 || port > 5050) {
+			throws InvalidPortException()
+		}
+		
+		System.out.println("Enter the IP address of the server: ");
+		String ip = input.readLine();
+		
+		Server server = new Server(5000, "1.1.1.1");
+	}
+}
+
+
+ 
+public class Test  
+{ 
+    public static void main(String[] args) throws IOException  
+    { 
+        //Enter data using BufferReader 
+        BufferedReader reader =  
+                   new BufferedReader(new InputStreamReader(System.in)); 
+         
+        // Reading data using readLine 
+        String name = reader.readLine(); 
+  
+        // Printing the read line 
+        System.out.println(name);         
+    } 
+}

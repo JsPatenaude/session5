@@ -1,0 +1,9 @@
+public class Main {
+	public static void main(String[] args) {
+		System.out.println("Enter the port of the server: ");
+		
+		System.out.println("Enter the IP address of the server: ");
+		
+		Server server = new Server(5000, "1.1.1.1");
+	}
+}

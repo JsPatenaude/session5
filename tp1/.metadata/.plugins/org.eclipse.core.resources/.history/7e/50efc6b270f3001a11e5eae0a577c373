@@ -1,0 +1,35 @@
+
+public class Server {
+	private int port = 5000;
+	String ip = "0.0.0.0";
+	
+	public int getPort() {
+		return port;
+	}
+
+	public boolean setPort(int port) {
+		if (port > 5050 || port < 5000) {
+			return false;
+		}
+		this.port = port;
+		return true;
+	}
+	
+	
+	
+	public boolean portValidation(int portToValidate) {
+		
+		return true;
+	}
+	
+	public boolean IPValidation() {
+		return false;
+	}
+	
+	
+	public static void main(String[] args) {
+		System.out.println("Hello");
+	}
+
+	
+}
