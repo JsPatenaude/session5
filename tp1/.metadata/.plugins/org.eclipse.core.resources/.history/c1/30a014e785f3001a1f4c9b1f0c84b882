@@ -75,6 +75,6 @@ public class Server {
 	
 	
 	// TODO other fct to receive command from client and send command to client
-	// TODO manage pictures (send header and data/buffer --> check most efficient way) to apply filter
+	// TODO manage pictures
 	
 }

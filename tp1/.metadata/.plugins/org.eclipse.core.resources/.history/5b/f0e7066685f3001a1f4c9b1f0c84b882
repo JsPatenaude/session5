@@ -65,16 +65,13 @@ public class Server {
 	}
 	
 	/**
-	* Apply the Sobel filter on the picture
-	* @param  picture on which to apply the filter
+	* Apply the Sobel filter on the image
+	* @param  iamge	the on which to apply the filter
 	* @return void
 	*/
-	public void applySobelFilter(/*picture*/) {
+	public void applySobelFilter(/*image*/) {
 		
 	}
 	
-	
-	// TODO other fct to receive command from client and send command to client
-	// TODO manage pictures (send header and data/buffer --> check most efficient way) to apply filter
 	
 }

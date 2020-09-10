@@ -1,0 +1,16 @@
+{
+	"allUsers": [
+		{
+			"userName": "user1",
+			"password": "pwd1"
+		},
+		{
+			"userName": "user2",
+			"password": "pwd2"
+		},
+		{
+			"userName": "user2",
+			"password": "pwd2"
+		}
+	]
+}
