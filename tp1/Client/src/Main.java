@@ -18,11 +18,8 @@ public class Main {
 			throw new InvalidIpAddressException();
 		}
 		
-		Server server = new Server(port, ip);
-		server.startServer();
+		Client client = new Client(port, ip);
+		client.startClient();
 	}
 }
-
-//TODO documenting each fct in every file (java doc)
-
 

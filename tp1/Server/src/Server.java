@@ -1,7 +1,11 @@
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
+import java.net.ServerSocket;
 
 public class Server {
 	int port;
 	String ip;
+	private static ServerSocket listenner;
 	
 	/**
 	* Creates a default Server object without parameters
@@ -22,18 +26,30 @@ public class Server {
 	}
 	
 	/**
-	* Starts the server
+	* Starts the server application
 	* @return void
 	*/
-	public void startServer() {
+	public void startServer() throws Exception {
+		int nClients = 0;
+		// Create connection
+		this.listenner = new ServerSocket();
+		this.listenner.setReuseAddress(true);
+		InetAddress serverIpAddress = InetAddress.getByName(this.ip);
+		// Associate IP address and port to connection
+		this.listenner.bind(new InetSocketAddress(serverIpAddress, this.port));
 		
-	}
-	
-	/**
-	* Stops the server
-	* @return void
-	*/
-	public void stopServer() {
+		System.out.format("Server is running on %s:%d\n", this.ip, this.port);
+		
+		try {
+			// Run ClientHandler for each new client connected
+			while(true) {
+				new ClientHandler(this.listenner.accept(), ++nClients).run();
+			}
+		}
+		finally {
+			// Close connection
+			this.listenner.close();
+		}
 		
 	}
 	
