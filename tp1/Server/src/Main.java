@@ -24,5 +24,6 @@ public class Main {
 }
 
 //TODO documenting each fct in every file (java doc)
+//TODO keep all external libraries to explain why we used them in the report
 
 

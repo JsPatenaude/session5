@@ -38,12 +38,16 @@ public class Server {
 		// Associate IP address and port to connection
 		this.listenner.bind(new InetSocketAddress(serverIpAddress, this.port));
 		
+		// Log from server started
 		System.out.format("Server is running on %s:%d\n", this.ip, this.port);
 		
 		try {
 			// Run ClientHandler for each new client connected
 			while(true) {
 				new ClientHandler(this.listenner.accept(), ++nClients).run();
+				// TODO receive image
+				// TODO filter image
+				// TODO send back image to client via ClientHandler fct
 			}
 		}
 		finally {

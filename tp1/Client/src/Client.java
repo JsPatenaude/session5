@@ -1,6 +1,11 @@
 import java.awt.image.BufferedImage;
+import javax.imageio.ImageIO;
+
+import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
 import java.net.Socket;
 
 public class Client {
@@ -33,29 +38,37 @@ public class Client {
 	public void startClient() throws Exception {
 		// Create connection with server
 		this.socket = new Socket(this.ip, this.port);
-		
-		System.out.format("Server is running on %s:%d\n", this.ip, this.port);
-		
 		// In channel to receive messages from server
 		DataInputStream in = new DataInputStream(this.socket.getInputStream());
+		// Out channel to send messages to server
+		DataOutputStream out = new DataOutputStream(socket.getOutputStream());
+		
+		// Log from connection to server
+		System.out.format("Server is running on %s:%d\n", this.ip, this.port);
+		
+		// TODO send username and password
+		// Send username and password to server for the authentication
+		out.writeUTF("this is a username and this is a password");
+		
+		// Receive message from server to know if authentication was successful or not
 		String message = in.readUTF();
 		System.out.println(message);
 		
-		// Out channel to send messages to server
-		DataOutputStream out = new DataOutputStream(socket.getOutputStream());
-		out.writeUTF("Hello from client");
+		// TODO if authentication was not good, retry (maybe while loop to try again, but after 2-3times --> close socket and kill client)
+		
+		
+		// Image to send to server
+		FileInputStream imageToSend = new FileInputStream (System.getProperty("user.dir") + "/Client/src/bitcoin.jpg");
+		int i = 0;
+		while ((i = imageToSend.read()) > -1) {
+			out.write(i);
+		}
+		
+		// TODO wait for server to send back image
+		// TODO save image (same name or name_filter?)
 		
 		// Close connection with server
 		this.socket.close();
-	}
-	
-	/**
-	* Get the desired image in the project folder
-	* @param imageName the name of the desired image
-	* @return void
-	*/
-	public void getImage(String imageName) {
-		
 	}
 	
 }
