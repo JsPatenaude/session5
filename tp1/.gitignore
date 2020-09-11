@@ -2,6 +2,7 @@
 /bin/
 *.jpg
 *.png
+.metadata
 .settings
 .project
 .classpath
