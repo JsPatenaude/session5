@@ -1,6 +1,0 @@
-
-public class InvalidPortException extends Exception {
-	InvalidPortException() {
-		super("Invalid port. you should enter a port number between 5000 and 5050.");
-	}
-}
