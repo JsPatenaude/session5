@@ -1,9 +1,11 @@
+
+
 import java.io.InputStreamReader;
 import java.io.IOException; 
 import java.io.BufferedReader;
 
 public class ServerAddr {
-    public static String askAddr() throws InvalidIpAddressException, IOException {
+    public String askAddr() throws InvalidIpAddressException, IOException {
 
         BufferedReader input = new BufferedReader(new InputStreamReader(System.in)); 
         System.out.println("Please enter the server ip address:");
@@ -17,7 +19,7 @@ public class ServerAddr {
         return ip;
     }
 
-    public static int askPort() throws InvalidPortException, IOException {
+    public int askPort() throws InvalidPortException, IOException {
 
         BufferedReader input = new BufferedReader(new InputStreamReader(System.in)); 
 		System.out.println("Enter the port of the server:");

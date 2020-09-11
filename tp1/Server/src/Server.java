@@ -1,3 +1,4 @@
+
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.ServerSocket;
@@ -62,7 +63,7 @@ public class Server {
 	* @param  user	the User object to add
 	* @return void
 	*/
-	public void addUser(User user) {
+	public void addUser(UserDB user) {
 		// write user to db (json)
 	}
 
@@ -70,8 +71,8 @@ public class Server {
 	* Add a user to the users' database
 	* @return		an array of all users on the database
 	*/
-	public User[] readUsersDatabase() {
-		return new User[] {new User("a", "b")};
+	public UserDB[] readUsersDatabase() {
+		return new UserDB[] {new UserDB()};
 	}
 	
 	/**
@@ -79,7 +80,7 @@ public class Server {
 	* @param  user	the user to find on the database
 	* @return		true if the user is found, false if not
 	*/
-	public boolean authenticateUser(User user) {
+	public boolean authenticateUser(UserDB user) {
 		// authenticate user by searching for username and password in db
 		return false;
 	}

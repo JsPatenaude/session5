@@ -1,9 +1,6 @@
-import java.io.BufferedReader; 
-import java.io.IOException; 
-import java.io.InputStreamReader;
-// import ServerAddr;
+import java.io.IOException;
 
-public class Main {
+public class MainServer {
 	public static void main(String[] args) throws Exception, IOException, InvalidPortException, InvalidIpAddressException {
 		var serverAddr = new ServerAddr();
 
