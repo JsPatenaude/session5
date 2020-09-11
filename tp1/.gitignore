@@ -1,12 +1,10 @@
 *.jpg
 *.png
-<<<<<<< HEAD
+*.jar
 
 makefile
 
 #eclipse
-=======
->>>>>>> 5d5dab0f5cc492174d1f331b2eca729bcf61631e
 .metadata
 .settings
 .project

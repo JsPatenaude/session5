@@ -1,10 +1,24 @@
+public class UserDB {
 
-public class User {
-	String username;
-	String password;
+	public UserDB() {
+	}
+
 	
-	public User(String username, String password) {
-		this.username = username;
-		this.password = password;
+	// verifyUser verify if the credential of the given user are right.
+	// if the username does not exist, it will be automatically created
+	public boolean verifyUser(String username, String password) {
+	
+	}
+
+	private boolean userExist(String username) {
+
+	}
+
+	private boolean passwordOk() {
+
+	}
+
+	private boolean addUser(String) {
+		
 	}
 }
