@@ -1,4 +1,10 @@
-/.metadata/
 *.jpg
 *.png
+
 makefile
+
+#eclipse
+.metadata
+.settings
+.project
+.classpath
