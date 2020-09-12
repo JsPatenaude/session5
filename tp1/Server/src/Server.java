@@ -45,6 +45,7 @@ public class Server {
 		try {
 			// Run ClientHandler for each new client connected
 			while(true) {
+				// TODO launch in thread
 				new ClientHandler(this.listenner.accept(), ++nClients).run();
 				// TODO receive image
 				// TODO filter image

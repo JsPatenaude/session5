@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.BufferedReader;
 
 public class ServerAddr {
+	
+	//TODO add doc
     public String askAddr() throws InvalidIpAddressException, IOException {
 
         BufferedReader input = new BufferedReader(new InputStreamReader(System.in)); 
